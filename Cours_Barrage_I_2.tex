@@ -1,0 +1,2325 @@
+﻿\documentclass[12pt,a4paper]{book}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuration de la page
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Configuration des chapitres
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% Configuration des sections
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{\thesection}{1em}{}
+
+% Configuration des sous-sections
+\titleformat{\subsection}
+{\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% Configuration des paragraphes
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Configuration des listes
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+% Configuration des hyperliens
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Cours de Barrage I},
+    pdfauthor={Pr. LAKEHAL Moussa},
+    pdfsubject={Barrages Hydrauliques},
+    pdfkeywords={barrage, hydraulique, génie civil, ouvrages hydrauliques}
+}
+
+% Début du document
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+    
+    % Logo de l'université (à remplacer par le vrai logo)
+    \includegraphics[width=0.3\textwidth]{example-image}\par\vspace{1cm}
+    
+    {\LARGE \textbf{Université Badji Mokhtar - Annaba}\par}
+    \vspace{0.5cm}
+    
+    {\Large \textbf{Faculté de Technologie}\par}
+    \vspace{0.5cm}
+    
+    {\large \textbf{Département de l'Hydraulique}\par}
+    \vspace{1.5cm}
+    
+    {\Huge \textbf{Cours de Barrage I}\par}
+    \vspace{1.5cm}
+    
+    {\Large \textbf{Master I en Hydraulique}\par}
+    \vspace{0.5cm}
+    
+    {\large \textbf{Spécialité : Ouvrages Hydrauliques}\par}
+    \vspace{1.5cm}
+    
+    {\large \textbf{Chargé de la matière :}\par}
+    {\Large \textbf{Pr. LAKEHAL Moussa}\par}
+    \vspace{1cm}
+    
+    {\large \textbf{Année Universitaire : 2023-2024}\par}
+    \vspace{1.5cm}
+    
+    \begin{minipage}{0.9\textwidth}
+        \centering
+        \large
+        \textbf{Objectif du cours :} 
+        Ce cours vise à fournir aux étudiants une connaissance approfondie des principes de conception, de construction et de surveillance des barrages hydrauliques, avec un accent particulier sur les aspects techniques et de sécurité.
+    \end{minipage}
+    
+    \vfill
+    
+    {\large \today\par}
+\end{titlepage}
+
+% Table des matières
+\tableofcontents
+\cleardoublepage
+
+% Liste des figures
+\listoffigures
+\cleardoublepage
+
+% Liste des tableaux
+\listoftables
+\cleardoublepage
+
+% Introduction générale
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+
+\section*{Contexte et importance des barrages}
+Les barrages constituent des ouvrages hydrauliques d'une importance capitale dans la gestion des ressources en eau. Depuis l'antiquité jusqu'à nos jours, ces structures ont évolué pour répondre à des besoins croissants en eau potable, irrigation, production d'énergie hydroélectrique et régulation des crues. En Algérie, pays marqué par une aridité croissante, la maîtrise de l'eau représente un enjeu stratégique pour le développement durable.
+
+\section*{Objectifs pédagogiques}
+À l'issue de ce cours, l'étudiant sera capable de :
+\begin{itemize}
+    \item Comprendre les différents types de barrages et leurs domaines d'application
+    \item Maîtriser les études préliminaires nécessaires à la conception d'un barrage
+    \item Dimensionner les différents types de barrages (terre, enrochements, masque amont)
+    \item Analyser les phénomènes d'infiltration et leurs conséquences
+    \item Évaluer la stabilité des barrages et proposer des solutions de renforcement
+    \item Appliquer les normes de sécurité et les méthodes de surveillance modernes
+\end{itemize}
+
+\section*{Organisation du cours}
+Le cours est organisé en sept chapitres correspondant au programme officiel. Chaque chapitre comporte des parties théoriques, des études de cas, des exemples de calcul et des illustrations techniques. Des références bibliographiques actualisées sont fournies à la fin de chaque chapitre.
+
+\vspace{1cm}
+\begin{center}
+    \textbf{Bonne étude et réussite dans votre formation !}
+    
+    Pr. LAKEHAL Moussa
+\end{center}
+
+\cleardoublepage
+
+% Début des chapitres
+% =================== CHAPITRE 1 ===================
+\chapter{Généralités sur les barrages}
+\label{chap:1}
+
+\section{Introduction}
+\subsection{Définition et rôle d'un barrage}
+Un barrage est défini comme un ouvrage artificiel ou naturel qui barre le lit d'un cours d'eau, créant une retenue d'eau en amont. Selon la Commission Internationale des Grands Barrages (CIGB), un \textbf{grand barrage} est celui dont la hauteur dépasse 15 mètres ou dont le volume de la retenue excède 3 millions de mètres cubes.
+
+\subsection{Classification des barrages}
+Les barrages peuvent être classés selon plusieurs critères :
+
+\begin{table}[H]
+\centering
+\caption{Classification des barrages selon différents critères}
+\label{tab:classification_barrages}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Critère de classification} & \textbf{Types} \\
+\hline
+Matériaux de construction & Barrages en terre, en enrochements, en béton, mixtes \\
+\hline
+Méthode de résistance au poids & Barrages-poids, barrages-voûtes, barrages à contreforts \\
+\hline
+Fonction principale & Barrages de retenue, barrages de dérivation, barrages de régulation \\
+\hline
+Durée d'utilisation & Barrages permanents, barrages provisoires \\
+\hline
+Hauteur & Barrages très hauts ($>$ 100 m), hauts (30-100 m), moyens (15-30 m), bas ($<$ 15 m) \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Historique}
+\subsection{Évolution chronologique}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+\draw[->] (0,0) -- (12,0) node[right] {Temps (années)};
+\draw[->] (0,0) -- (0,6) node[above] {Complexité technologique};
+\draw (1,0.5) node[below] {Antiquité} rectangle (2,1.5);
+\draw (2,1) node[above] {Barrages en terre simples};
+\draw (3,1.2) rectangle (4,2.2);
+\draw (4,1.7) node[above] {Époque romaine};
+\draw (5,2) rectangle (6,3);
+\draw (6,2.5) node[above] {Moyen Âge};
+\draw (7,2.8) rectangle (8,3.8);
+\draw (8,3.3) node[above] {Révolution industrielle};
+\draw (9,3.5) rectangle (10,4.5);
+\draw (10,4) node[above] {XXe siècle};
+\draw (11,4.2) rectangle (12,5.2);
+\draw (12,4.7) node[above] {XXIe siècle};
+\draw[thick] (1.5,1) -- (3.5,1.2) -- (5.5,2) -- (7.5,2.8) -- (9.5,3.5) -- (11.5,4.2);
+\end{tikzpicture}
+\caption{Évolution historique des technologies de barrages}
+\label{fig:evolution_historique}
+\end{figure}
+
+\subsection{Barrages célèbres dans l'histoire}
+\begin{itemize}
+\item \textbf{Barrage de Sadd-el-Kafara} (Égypte, 2600 av. J.-C.) : Plus ancien barrage connu
+\item \textbf{Barrages romains} (Espagne, Ier siècle) : Utilisation systématique du mortier
+\item \textbf{Barrage d'Itoh} (Japon, 762) : Premier barrage en enrochements avec noyau d'argile
+\item \textbf{Barrage de Hoover} (États-Unis, 1936) : Révolution dans les barrages en béton
+\item \textbf{Barrage des Trois Gorges} (Chine, 2006) : Plus grande centrale hydroélectrique du monde
+\end{itemize}
+
+\section{Objectifs de la construction des barrages}
+\subsection{Usages multiples}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image}
+\caption{Principales fonctions d'un barrage}
+\label{fig:fonctions_barrage}
+\end{figure}
+
+\subsubsection{Production d'énergie hydroélectrique}
+La puissance théorique d'une centrale hydroélectrique est donnée par la formule de \textbf{Daniel Bernoulli} (1700-1782) :
+
+\begin{equation}
+P = \eta \cdot \rho \cdot g \cdot Q \cdot H
+\label{eq:puissance_hydro}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $P$ : Puissance (W)
+\item $\eta$ : Rendement global (0.7-0.9)
+\item $\rho$ : Masse volumique de l'eau (1000 kg/m³)
+\item $g$ : Accélération de la pesanteur (9.81 m/s²)
+\item $Q$ : Débit turbiné (m³/s)
+\item $H$ : Hauteur de chute (m)
+\end{itemize}
+
+\subsubsection{Irrigation}
+L'équation de bilan hydrique pour l'irrigation (formule de \textbf{Blaney-Criddle}, 1950) :
+
+\begin{equation}
+ET_0 = k \cdot p \cdot (0.46T + 8)
+\label{eq:blaney_criddle}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $ET_0$ : Évapotranspiration de référence (mm/jour)
+\item $k$ : Coefficient cultural
+\item $p$ : Pourcentage d'heures de jour
+\item $T$ : Température moyenne (°C)
+\end{itemize}
+
+\subsubsection{Approvisionnement en eau potable}
+Le dimensionnement suit la formule de \textbf{Fu} pour les besoins en eau :
+
+\begin{equation}
+Q_p = \frac{P \cdot C \cdot K_j \cdot K_h}{86400}
+\label{eq:besoin_eau}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $Q_p$ : Débit de pointe (m³/s)
+\item $P$ : Population desservie
+\item $C$ : Consommation spécifique (L/hab/jour)
+\item $K_j$ : Coefficient de pointe journalière
+\item $K_h$ : Coefficient de pointe horaire
+\end{itemize}
+
+\section{Problèmes de sécurité des barrages}
+\subsection{Risques majeurs}
+
+\begin{table}[H]
+\centering
+\caption{Classification des risques pour les barrages (selon ICOLD)}
+\label{tab:risques_barrages}
+\begin{tabularx}{\textwidth}{|l|X|c|}
+\hline
+\textbf{Type de risque} & \textbf{Causes principales} & \textbf{Fréquence} \\
+\hline
+Rupture par surverse & Crue exceptionnelle, défaillance des évacuateurs & Rare \\
+\hline
+Érosion interne & Renard, dissolution, suffusion & Fréquent \\
+\hline
+Glissement de talus & Pression interstitielle excessive, séisme & Occasionnel \\
+\hline
+Déformation excessive & Tassement différentiel, fluage & Fréquent \\
+\hline
+Vieillissement des matériaux & Altération chimique, fatigue & Lent \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Principales catastrophes historiques}
+\begin{itemize}
+\item \textbf{Malpasset, France (1959)} : Rupture d'un barrage-voûte, 423 morts
+\item \textbf{Vajont, Italie (1963)} : Glissement de terrain dans la retenue, 1917 morts
+\item \textbf{Teton, USA (1976)} : Érosion interne, 11 morts
+\item \textbf{Machhu II, Inde (1979)} : Surverse, 5000 morts
+\end{itemize}
+
+\section{Éléments constructifs d'un barrage}
+\subsection{Composition type}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Corps du barrage
+\draw[thick, fill=gray!30] (0,0) -- (4,3) -- (8,3) -- (12,0) -- cycle;
+\draw[thick] (0,0) -- (12,0);
+
+% Noyau
+\draw[thick, fill=brown!50] (4,0) -- (5,2.5) -- (7,2.5) -- (8,0) -- cycle;
+
+% Drain
+\draw[thick, pattern=north east lines] (8,0) rectangle (9,1);
+
+% Évacuateur
+\draw[thick] (2,3) -- (2,4) -- (10,4) -- (10,3);
+
+% Légendes
+\draw (2,1.5) node {Corps} (5.5,1.5) node {Noyau} (8.5,0.5) node {Drain} (6,3.5) node {Évacuateur};
+
+% Axes
+\draw[<->] (0,5) -- (12,5) node[midway, above] {Longueur en crête};
+\draw[<->] (12,0) -- (12,3) node[midway, right] {Hauteur};
+\end{tikzpicture}
+\caption{Éléments constitutifs d'un barrage en terre type}
+\label{fig:elements_barrage}
+\end{figure}
+
+\subsection{Description des composants}
+\subsubsection{Corps du barrage}
+Partie principale assurant la stabilité et l'étanchéité.
+
+\subsubsection{Évacuateur de crues}
+Système permettant l'évacuation des eaux excédentaires. Types :
+\begin{itemize}
+\item Évacuateur à seuil libre (formule de \textbf{Poleni})
+\item Évacuateur à vannes
+\item Évacuateur en saut de ski
+\end{itemize}
+
+\subsubsection{Prise d'eau}
+Système de captage pour les différents usages.
+
+\subsubsection{Vidange de fond}
+Permet la vidange complète de la retenue.
+
+\subsubsection{Drains et filtres}
+Systèmes de collecte et d'évacuation des eaux d'infiltration.
+
+\subsection{Matériaux utilisés}
+\begin{table}[H]
+\centering
+\caption{Caractéristiques des principaux matériaux de construction}
+\label{tab:materiaux_barrage}
+\begin{tabularx}{\textwidth}{|l|c|c|c|c|}
+\hline
+\textbf{Matériau} & \textbf{Densité (t/m³)} & \textbf{Permeabilité (m/s)} & \textbf{Cohésion (kPa)} & \textbf{Angle de frottement (°)} \\
+\hline
+Argile compactée & 1.8-2.1 & $10^{-9}$-$10^{-7}$ & 20-100 & 15-25 \\
+\hline
+Sable compacté & 1.9-2.2 & $10^{-5}$-$10^{-3}$ & 0 & 30-40 \\
+\hline
+Enrochements & 2.0-2.4 & $10^{-2}$-$10^{-1}$ & 0 & 40-50 \\
+\hline
+Béton & 2.3-2.5 & $10^{-10}$-$10^{-8}$ & 2000+ & - \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Calcul de stabilité simplifié}
+Pour un barrage-poids en béton, la condition de non-renversement selon \textbf{Rankine} :
+
+\begin{equation}
+FS_{renversement} = \frac{\sum M_{stabilisants}}{\sum M_{renversants}} \geq 1.5
+\label{eq:stabilite_renversement}
+\end{equation}
+
+La condition de non-glissement selon \textbf{Coulomb} :
+
+\begin{equation}
+FS_{glissement} = \frac{\sum F_{verticales} \cdot \tan(\phi) + c \cdot A}{\sum F_{horizontales}} \geq 1.0
+\label{eq:stabilite_glissement}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $FS$ : Facteur de sécurité
+\item $\phi$ : Angle de frottement interne
+\item $c$ : Cohésion du matériau
+\item $A$ : Surface de la base
+\end{itemize}
+
+\section*{Conclusion du chapitre}
+Ce premier chapitre a présenté les généralités sur les barrages, leur historique, leurs fonctions et les principaux éléments constitutifs. Les concepts fondamentaux de sécurité ont été introduits, préparant le terrain pour les études plus techniques des chapitres suivants.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Calculez la puissance théorique d'une centrale hydroélectrique avec un débit de 50 m³/s et une hauteur de chute de 80 m, en supposant un rendement de 85\%.
+
+\item Pour un barrage en terre de 30 m de hauteur, déterminez la largeur minimale en crête selon les recommandations de la CIGB.
+
+\item Analysez les causes possibles de la rupture du barrage de Malpasset et proposez des mesures préventives.
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{International Commission on Large Dams (ICOLD)}. (2021). \textit{World Register of Dams}.
+\item \textbf{Novak, P., Moffat, A. I. B., Nalluri, C., \& Narayanan, R.} (2019). \textit{Hydraulic Structures}. CRC Press.
+\item \textbf{US Bureau of Reclamation}. (2020). \textit{Design of Small Dams}.
+\item \textbf{Londe, P.} (2018). \textit{La sécurité des barrages}. Presses des Ponts.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 2 ===================
+\chapter{Études préliminaires des barrages}
+\label{chap:2}
+
+\section{Études topographiques}
+\subsection{Levés topographiques}
+
+Les études topographiques constituent la base de toute conception de barrage. Elles permettent de définir la morphologie du site et de quantifier les volumes de matériaux nécessaires.
+
+\subsubsection{Méthodes modernes de levés}
+\begin{itemize}
+\item \textbf{LIDAR} (Light Detection and Ranging) : Précision centimétrique
+\item \textbf{Photogrammétrie aérienne} : Modèles 3D détaillés
+\item \textbf{GNSS} (Global Navigation Satellite System) : Positionnement absolu
+\item \textbf{Scanner terrestre 3D} : Pour les détails complexes
+\end{itemize}
+
+\subsection{Calcul des volumes}
+La formule des \textbf{auteurs Simpson} pour le calcul des volumes entre profils :
+
+\begin{equation}
+V = \frac{d}{3} \left( A_1 + A_n + 4\sum A_{impairs} + 2\sum A_{pairs} \right)
+\label{eq:simpson_volume}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $V$ : Volume (m³)
+\item $d$ : Distance entre profils (m)
+\item $A_i$ : Aire du profil i (m²)
+\end{itemize}
+
+\subsection{Courbes hauteur-volume-superficie}
+Ces courbes sont essentielles pour la gestion de la retenue :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.8\textwidth,
+    height=0.6\textwidth,
+    xlabel={Volume (millions de m³)},
+    ylabel={Hauteur (m)},
+    grid=both,
+    legend pos=north west,
+    title={Courbes caractéristiques de la retenue}
+]
+\addplot[blue, thick] coordinates {
+    (0,0) (10,20) (50,40) (150,60) (300,80) (500,100)
+};
+\addlegendentry{Volume}
+\addplot[red, thick, dashed] coordinates {
+    (0,0) (5,20) (25,40) (75,60) (150,80) (250,100)
+};
+\addlegendentry{Superficie}
+\end{axis}
+\end{tikzpicture}
+\caption{Courbes caractéristiques hauteur-volume-superficie}
+\label{fig:courbes_caracteristiques}
+\end{figure}
+
+\section{Études géologiques et géotechniques}
+\subsection{Reconnaissance géologique}
+
+\begin{table}[H]
+\centering
+\caption{Méthodes de reconnaissance géotechnique}
+\label{tab:reconnaissance_geotech}
+\begin{tabularx}{\textwidth}{|l|X|c|}
+\hline
+\textbf{Méthode} & \textbf{Objectif} & \textbf{Profondeur (m)} \\
+\hline
+Sondages carottés & Identification des couches, échantillonnage & 100+ \\
+\hline
+Essais pressiométriques & Module de déformation, pression limite & 50 \\
+\hline
+Essais pénétrométriques & Résistance en pointe, frottement latéral & 30 \\
+\hline
+Géophysique (sismique) & Vitesse des ondes, structure profonde & 200+ \\
+\hline
+Essais en laboratoire & Paramètres mécaniques, perméabilité & - \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Paramètres géotechniques essentiels}
+\subsubsection{Perméabilité}
+Mesurée par essais Lugeon ou Lefranc :
+
+\begin{equation}
+k = \frac{Q}{2\pi H L} \ln\left(\frac{R}{r}\right)
+\label{eq:permeabilite_lefranc}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $k$ : Coefficient de perméabilité (m/s)
+\item $Q$ : Débit d'injection (m³/s)
+\item $H$ : Charge hydraulique (m)
+\item $L$ : Longueur de la section testée (m)
+\item $R$ : Rayon d'influence (m)
+\item $r$ : Rayon du forage (m)
+\end{itemize}
+
+\subsubsection{Résistance au cisaillement}
+Critère de rupture de \textbf{Mohr-Coulomb} :
+
+\begin{equation}
+\tau = c' + (\sigma - u) \tan\phi'
+\label{eq:mohr_coulomb}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $\tau$ : Résistance au cisaillement (kPa)
+\item $c'$ : Cohésion effective (kPa)
+\item $\sigma$ : Contrainte normale totale (kPa)
+\item $u$ : Pression interstitielle (kPa)
+\item $\phi'$ : Angle de frottement effectif (°)
+\end{itemize}
+
+\section{Études hydrologiques}
+\subsection{Analyse des précipitations}
+
+\subsubsection{Courbes Intensité-Durée-Fréquence (IDF)}
+Formule de \textbf{Montana} :
+
+\begin{equation}
+i = \frac{a}{(t + b)^c}
+\label{eq:formule_montana}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $i$ : Intensité de pluie (mm/h)
+\item $t$ : Durée (min)
+\item $a, b, c$ : Coefficients régionaux
+\end{itemize}
+
+\subsection{Détermination des crues}
+\subsubsection{Méthode rationnelle}
+Pour petits bassins versants ($<$ 10 km²) :
+
+\begin{equation}
+Q_p = 0.278 \cdot C \cdot i \cdot A
+\label{eq:rationnelle}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $Q_p$ : Débit de pointe (m³/s)
+\item $C$ : Coefficient de ruissellement
+\item $i$ : Intensité de pluie (mm/h)
+\item $A$ : Superficie du bassin (km²)
+\end{itemize}
+
+\subsubsection{Méthode du Gradex}
+Pour l'extrapolation des crues extrêmes :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.8\textwidth,
+    height=0.6\textwidth,
+    xlabel={Débit (m³/s)},
+    ylabel={Probabilité de dépassement},
+    grid=both,
+    ymin=0,
+    ymax=1,
+    xmode=log,
+    title={Courbe Gradex pour l'extrapolation des crues}
+]
+\addplot[blue, thick, mark=*] coordinates {
+    (100,0.99) (200,0.90) (500,0.50) (1000,0.10) (2000,0.01)
+};
+\addplot[red, thick, dashed] coordinates {
+    (1000,0.10) (5000,0.001)
+};
+\node at (axis cs:3000,0.002) {Extrapolation Gradex};
+\end{axis}
+\end{tikzpicture}
+\caption{Méthode Gradex pour les crues extrêmes}
+\label{fig:gradex}
+\end{figure}
+
+\section{Niveaux caractéristiques dans un barrage}
+\subsection{Définitions et notations}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+% Barrage
+\draw[thick, fill=gray!30] (0,0) -- (2,4) -- (8,4) -- (10,0) -- cycle;
+
+% Niveaux
+\draw[blue, thick] (0,3.5) -- (10,3.5) node[right] {CNM};
+\draw[red, thick] (0,3.0) -- (10,3.0) node[right] {NRN};
+\draw[green, thick] (0,2.5) -- (10,2.5) node[right] {NPH};
+\draw[orange, thick] (0,1.5) -- (10,1.5) node[right] {NM};
+\draw[purple, thick] (0,0.5) -- (10,0.5) node[right] {NMT};
+
+% Légende
+\draw (11,3.5) node[right, blue] {CNM : Cote normale maximale};
+\draw (11,3.0) node[right, red] {NRN : Niveau retenue normale};
+\draw (11,2.5) node[right, green] {NPH : Niveau des plus hautes eaux};
+\draw (11,1.5) node[right, orange] {NM : Niveau minimum};
+\draw (11,0.5) node[right, purple] {NMT : Niveau mort};
+
+% Axe vertical
+\draw[<->] (10.5,0) -- (10.5,4) node[midway, right] {Hauteur (m)};
+\end{tikzpicture}
+\caption{Niveaux caractéristiques dans une retenue de barrage}
+\label{fig:niveaux_caracteristiques}
+\end{figure}
+
+\subsection{Calcul des cotes}
+\subsubsection{Cote de la crête}
+Déterminée par la formule de \textbf{Vischer \& Hager} :
+
+\begin{equation}
+H_c = H_{NPH} + R + F_s
+\label{eq:cote_crete}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $H_c$ : Cote de la crête (m)
+\item $H_{NPH}$ : Cote des plus hautes eaux (m)
+\item $R$ : Revanche (fonction de la fetch et du vent)
+\item $F_s$ : Tassement prévisible (m)
+\end{itemize}
+
+\subsubsection{Revanche minimale}
+Selon les recommandations de l'\textbf{USBR} :
+
+\begin{equation}
+R = 0.75 + 0.032\sqrt{F \cdot V_w}
+\label{eq:revanche}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $R$ : Revanche (m)
+\item $F$ : Fetch (km)
+\item $V_w$ : Vitesse du vent (km/h)
+\end{itemize}
+
+\subsection{Volume utile et volume mort}
+\subsubsection{Volume utile}
+Volume disponible entre NRN et NM :
+
+\begin{equation}
+V_u = \int_{Z_{NM}}^{Z_{NRN}} A(z) dz
+\label{eq:volume_utile}
+\end{equation}
+
+où $A(z)$ est la fonction superficie-cote.
+
+\subsubsection{Volume mort}
+Volume sous le NM, nécessaire pour la sédimentation :
+
+\begin{equation}
+V_m = \alpha \cdot Q_s \cdot T
+\label{eq:volume_mort}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $V_m$ : Volume mort (m³)
+\item $\alpha$ : Coefficient de tassement des sédiments (0.6-0.8)
+\item $Q_s$ : Débit solide annuel (m³/an)
+\item $T$ : Période de conception (années)
+\end{itemize}
+
+\subsection{Exemple de calcul complet}
+\textbf{Données :}
+\begin{itemize}
+\item Bassin versant : 150 km²
+\item Pluie décennale : 120 mm en 24h
+\item Coefficient de ruissellement : 0.65
+\item Cote NPH : 250.00 m NGF
+\end{itemize}
+
+\textbf{Calculs :}
+\begin{enumerate}
+\item Débit de pointe décennal (méthode rationnelle) :
+\[
+Q_{10} = 0.278 \times 0.65 \times \frac{120}{24} \times 150 = 135.5 \, m^3/s
+\]
+
+\item Volume de crue (méthode SCS) :
+\[
+V_{crue} = \frac{1000}{CN} - 10 = 85.7 \, mm
+\]
+\[
+V_{total} = 0.0857 \times 150 \times 10^6 = 12.86 \, Mm^3
+\]
+
+\item Dimensionnement de l'évacuateur (formule de déversoir) :
+\[
+Q = C \cdot L \cdot H^{3/2}
+\]
+\[
+L = \frac{135.5}{1.8 \times 2^{1.5}} = 26.6 \, m
+\]
+
+\item Revanche pour fetch = 2 km, vent = 100 km/h :
+\[
+R = 0.75 + 0.032 \times \sqrt{2 \times 100} = 1.20 \, m
+\]
+
+\item Cote de crête finale :
+\[
+H_c = 250.00 + 1.20 + 0.50 = 251.70 \, m \, NGF
+\]
+\end{enumerate}
+
+\section*{Conclusion du chapitre}
+Les études préliminaires constituent la phase la plus critique dans la conception d'un barrage. Une investigation approfondie du site, une analyse hydrologique fiable et une définition précise des niveaux caractéristiques sont essentielles pour la sécurité et la performance de l'ouvrage.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Pour un bassin versant de 75 km² avec un coefficient de ruissellement de 0.7, calculez le débit de pointe pour une pluie centennale de 180 mm en 24h.
+
+\item Déterminez la revanche nécessaire pour un barrage avec fetch de 3.5 km et vent de conception de 120 km/h.
+
+\item Calculez le volume mort nécessaire pour 50 ans de sédimentation avec un débit solide annuel de 15,000 m³/an.
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Chow, V. T., Maidment, D. R., \& Mays, L. W.} (2020). \textit{Applied Hydrology}. McGraw-Hill.
+\item \textbf{Fell, R., MacGregor, P., Stapledon, D., \& Bell, G.} (2015). \textit{Geotechnical Engineering of Dams}. CRC Press.
+\item \textbf{US Army Corps of Engineers}. (2019). \textit{Engineering and Design: Hydrologic Engineering Requirements for Reservoirs}.
+\item \textbf{Ministère de l'Agriculture et de la Pêche}. (2018). \textit{Guide des études géotechniques pour les barrages}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 3 ===================
+\chapter{Barrages à masque amont}
+\label{chap:3}
+
+\section{Introduction}
+Les barrages à masque amont sont des ouvrages dont l'étanchéité est assurée par une membrane placée sur le parement amont. Cette solution est particulièrement adaptée aux sites où les matériaux imperméables sont rares ou coûteux.
+
+\subsection{Définition et principe}
+Un barrage à masque amont est caractérisé par une structure drainante (en enrochements ou béton) recouverte d'un masque étanche du côté amont. Le masque peut être en :
+\begin{itemize}
+\item Béton armé
+\item Béton bitumineux
+\item Géomembranes synthétiques
+\item Acier
+\end{itemize}
+
+\section{Matériaux de base}
+\subsection{Géomembranes}
+Les géomembranes sont des membranes synthétiques minces utilisées pour l'étanchéité. Leurs propriétés varient selon le polymère de base :
+
+\begin{table}[H]
+\centering
+\caption{Comparaison des principaux types de géomembranes}
+\label{tab:geomembranes}
+\begin{tabularx}{\textwidth}{|l|c|c|c|c|}
+\hline
+\textbf{Type} & \textbf{Épaisseur (mm)} & \textbf{Résistance (kN/m)} & \textbf{Allongement (\%)} & \textbf{Durée de vie (années)} \\
+\hline
+PVC (Polychlorure de vinyle) & 1.0-2.0 & 15-25 & 250-350 & 20-30 \\
+\hline
+PEHD (Polyéthylène haute densité) & 1.5-3.0 & 25-40 & 500-700 & 50+ \\
+\hline
+PP (Polypropylène) & 1.0-2.5 & 20-35 & 400-600 & 30-40 \\
+\hline
+EPDM (Caoutchouc synthétique) & 1.0-2.0 & 10-20 & 300-500 & 25-35 \\
+\hline
+Bitume modifié & 4.0-8.0 & 50-100 & 100-200 & 30+ \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Béton bitumineux}
+Le béton bitumineux est un mélange de granulats, de filler et de bitume. Sa composition optimale suit la méthode de \textbf{Marshall} :
+
+\begin{equation}
+P_b = \frac{G_{mb} - G_{mm}}{G_{mb} \cdot G_{mm}} \cdot G_b \cdot 100
+\label{eq:bitume_marshall}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $P_b$ : Pourcentage de bitume (\%) 
+\item $G_{mb}$ : Masse volumique apparente du mélange compacté
+\item $G_{mm}$ : Masse volumique maximale théorique
+\item $G_b$ : Masse volumique du bitume
+\end{itemize}
+
+\section{Propriétés mécaniques des géomembranes}
+\subsection{Comportement en traction}
+La relation contrainte-déformation des géomembranes suit généralement un modèle hyperélastique de type \textbf{Mooney-Rivlin} :
+
+\begin{equation}
+W = C_{10}(I_1 - 3) + C_{01}(I_2 - 3)
+\label{eq:mooney_rivlin}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $W$ : Énergie de déformation
+\item $C_{10}, C_{01}$ : Constantes matérielles
+\item $I_1, I_2$ : Invariants du tenseur de déformation
+\end{itemize}
+
+\subsection{Résistance à la perforation}
+Essai selon norme ASTM D4833 : La résistance à la perforation statique est donnée par :
+
+\begin{equation}
+F_p = k \cdot t \cdot \sigma_y
+\label{eq:perforation}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $F_p$ : Force de perforation (N)
+\item $k$ : Coefficient de forme (2-3)
+\item $t$ : Épaisseur de la membrane (mm)
+\item $\sigma_y$ : Limite élastique (MPa)
+\end{itemize}
+
+\section{Comportement des géomembranes à long terme}
+\subsection{Vieillissement}
+Les mécanismes de vieillissement comprennent :
+\begin{itemize}
+\item \textbf{Dégradation chimique} : Oxydation, hydrolyse
+\item \textbf{Dégradation physique} : Fluage, relaxation
+\item \textbf{Dégradation biologique} : Attaque microbiologique
+\item \textbf{Dégradation environnementale} : UV, température
+\end{itemize}
+
+\subsection{Modèle de vieillissement d'Arrhenius}
+Pour prédire la durée de vie sous différentes températures :
+
+\begin{equation}
+t_{ref} = t_{test} \cdot \exp\left[\frac{E_a}{R}\left(\frac{1}{T_{test}} - \frac{1}{T_{ref}}\right)\right]
+\label{eq:arrhenius}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $t_{ref}$ : Durée de vie à température de référence
+\item $t_{test}$ : Durée de vie à température de test
+\item $E_a$ : Énergie d'activation (J/mol)
+\item $R$ : Constante des gaz parfaits (8.314 J/mol·K)
+\item $T$ : Température absolue (K)
+\end{itemize}
+
+\section{Dispositions techniques de pose}
+\subsection{Préparation du support}
+Le support doit être :
+\begin{itemize}
+\item Régulier (tolérance : ± 5 cm sur 4 m)
+\item Propre (absence de pierres anguleuses)
+\item Drainant (pente minimale : 2.5\%)
+\end{itemize}
+
+\subsection{Méthodes de soudure}
+\begin{table}[H]
+\centering
+\caption{Techniques de soudure des géomembranes}
+\label{tab:soudure_geomembranes}
+\begin{tabularx}{\textwidth}{|l|X|c|c|}
+\hline
+\textbf{Méthode} & \textbf{Description} & \textbf{Température (°C)} & \textbf{Vitesse (m/min)} \\
+\hline
+Soudage par extrusion & Extrusion de cordon de fusion & 180-220 & 1-3 \\
+\hline
+Soudage par air chaud & Flux d'air chauffé entre les feuilles & 300-400 & 1-4 \\
+\hline
+Soudage par plaques chaudes & Plaques chauffantes entre les feuilles & 200-250 & 0.5-2 \\
+\hline
+Collage chimique & Adhésifs spécifiques & Ambiance & 0.5-1 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Détails constructifs}
+\subsubsection{Ancrages en crête}
+L'ancrage doit résister à la force de traction maximale :
+
+\begin{equation}
+F_{ancrage} = \gamma_w \cdot h_{max} \cdot L_{ancrage}
+\label{eq:ancrage_crete}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $F_{ancrage}$ : Force d'ancrage (kN/m)
+\item $\gamma_w$ : Poids volumique de l'eau (10 kN/m³)
+\item $h_{max}$ : Hauteur d'eau maximale (m)
+\item $L_{ancrage}$ : Longueur d'ancrage (m)
+\end{itemize}
+
+\subsubsection{Joints de dilatation}
+Les joints doivent permettre les mouvements différentiels :
+
+\begin{equation}
+\Delta L = \alpha \cdot L \cdot \Delta T + \varepsilon \cdot L
+\label{eq:dilatation}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $\Delta L$ : Variation de longueur (m)
+\item $\alpha$ : Coefficient de dilatation thermique (K⁻¹)
+\item $L$ : Longueur initiale (m)
+\item $\Delta T$ : Variation de température (K)
+\item $\varepsilon$ : Déformation mécanique
+\end{itemize}
+
+\section{Essais et contrôles}
+\subsection{Contrôle de fabrication}
+\begin{itemize}
+\item \textbf{Contrôle des matières premières} : Certification des polymères
+\item \textbf{Contrôle en cours de fabrication} : Épaisseur, homogénéité
+\item \textbf{Contrôle final} : Dimensions, propriétés mécaniques
+\end{itemize}
+
+\subsection{Contrôle sur chantier}
+\subsubsection{Contrôle des soudures}
+Méthodes non destructives :
+\begin{itemize}
+\item \textbf{Test sous vide} : Détection des fuites
+\item \textbf{Test ultrasonore} : Qualité de la fusion
+\item \textbf{Test par haute tension} : Porosité
+\end{itemize}
+
+\subsubsection{Essai de cisaillement}
+Pour vérifier la résistance des soudures :
+
+\begin{equation}
+\tau_{soudure} \geq 0.8 \cdot \tau_{matrice}
+\label{eq:cisaillement_soudure}
+\end{equation}
+
+\subsection{Exemple de dimensionnement}
+\textbf{Problème :} Dimensionner un masque amont en PEHD pour un barrage de 40 m de hauteur.
+
+\textbf{Solution :}
+\begin{enumerate}
+\item Hauteur maximale d'eau : $h_{max} = 40 \, m$
+\item Pression maximale : $P_{max} = \gamma_w \cdot h_{max} = 10 \times 40 = 400 \, kPa$
+\item Choix du PEHD : épaisseur 2.5 mm, résistance 35 kN/m
+\item Contrainte de traction : $\sigma = P \times R = 400 \times 20 = 8000 \, kPa = 8 \, MPa$
+\item Facteur de sécurité : $FS = \frac{\sigma_{rupture}}{\sigma_{travail}} = \frac{25}{8} = 3.1 > 2.0$ OK
+\item Largeur des bandes : $L = \frac{R_{traction}}{P_{max}} = \frac{35}{400} = 0.0875 \, m = 87.5 \, mm$
+\item Ancrage en crête : $F_{ancrage} = 400 \times 1.5 = 600 \, kN/m$
+\end{enumerate}
+
+\section*{Conclusion du chapitre}
+Les barrages à masque amont offrent une solution économique et performante pour l'étanchéité, particulièrement dans les régions à matériaux imperméables limités. Le choix des matériaux, les techniques de pose et les contrôles qualité sont essentiels pour garantir la durabilité de l'ouvrage.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Calculez la force d'ancrage nécessaire pour un masque amont de 50 m de hauteur avec une longueur d'ancrage de 2 m.
+
+\item Déterminez l'épaisseur minimale d'une géomembrane PEHD pour résister à une pression de 500 kPa avec un facteur de sécurité de 2.5.
+
+\item Estimez la durée de vie d'une géomembrane PVC à 20°C si sa durée de vie à 60°C est de 5 ans (Ea = 80 kJ/mol).
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Giroud, J. P.} (2016). \textit{Geomembranes and Geosynthetics for Fluid Containment}. Elsevier.
+\item \textbf{Koerner, R. M.} (2020). \textit{Designing with Geosynthetics}. Pearson.
+\item \textbf{ICOLD Bulletin 135}. (2010). \textit{Geomembrane Sealing Systems for Dams}.
+\item \textbf{AFTES}. (2018). \textit{Recommandations pour l'utilisation des géomembranes}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 4 ===================
+\chapter{Barrages en terre}
+\label{chap:4}
+
+\section{Introduction}
+Les barrages en terre sont les ouvrages de retenue les plus anciens et les plus répandus dans le monde. Leur conception repose sur l'utilisation de matériaux naturels disponibles sur site ou à proximité.
+
+\subsection{Définition}
+Un barrage en terre est un ouvrage constitué principalement de matériaux terreux (argiles, limons, sables, graviers) compactés en couches successives. Sa stabilité est assurée par son propre poids et par la dissipation des pressions interstitielles.
+
+\section{Avantages et inconvénients}
+\subsection{Avantages}
+\begin{itemize}
+\item Utilisation de matériaux locaux (économie)
+\item Adaptabilité à différentes fondations
+\item Résistance aux séismes (ductilité)
+\item Maintenance relativement simple
+\item Faible empreinte carbone
+\end{itemize}
+
+\subsection{Inconvénients}
+\begin{itemize}
+\item Sensibilité à l'érosion interne et externe
+\item Volume important de matériaux
+\item Nécessité d'une étanchéité efficace
+\item Contrôle qualité plus complexe
+\end{itemize}
+
+\section{Classification des barrages en terre}
+\subsection{Selon la méthode d'étanchéité}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.7]
+% Barrage homogène
+\draw[thick, fill=brown!50] (0,0) -- (4,3) -- (8,3) -- (12,0) -- cycle;
+\draw (6,1.5) node {Homogène};
+
+% Barrage à noyau
+\draw[thick, fill=brown!30] (14,0) -- (18,3) -- (22,3) -- (26,0) -- cycle;
+\draw[thick, fill=brown!70] (17,0) -- (18.5,2.5) -- (21.5,2.5) -- (23,0) -- cycle;
+\draw (20,1.5) node {À noyau};
+
+% Barrage à masque
+\draw[thick, fill=brown!30] (28,0) -- (32,3) -- (36,3) -- (40,0) -- cycle;
+\draw[thick, fill=blue!30] (28,0) -- (28.5,0.5) -- (29,1) -- (29.5,1.5) -- (30,2) -- (30.5,2.5) -- (31,3) -- (32,3);
+\draw (34,1.5) node {À masque amont};
+
+% Légende
+\draw (6,-1) node {(a) Homogène};
+\draw (20,-1) node {(b) À noyau central};
+\draw (34,-1) node {(c) À masque amont};
+\end{tikzpicture}
+\caption{Types de barrages en terre selon la méthode d'étanchéité}
+\label{fig:types_barrages_terre}
+\end{figure}
+
+\subsection{Selon la granulométrie}
+Classification USCS (Unified Soil Classification System) :
+
+\begin{table}[H]
+\centering
+\caption{Utilisation des sols selon la classification USCS}
+\label{tab:sols_uscs}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Groupe USCS} & \textbf{Description} & \textbf{Utilisation dans les barrages} \\
+\hline
+GW, GP & Graves et sables bien gradués & Zones drainantes, shells \\
+\hline
+GM, GC & Sols graveleux avec fines & Zones semi-étanches \\
+\hline
+SW, SP & Sables bien/mal gradués & Zones de transition \\
+\hline
+SM, SC & Sables avec fines & Zones de fondation \\
+\hline
+ML, CL & Limons et argiles peu plastiques & Noyaux, zones étanches \\
+\hline
+MH, CH & Sols très plastiques & Noyaux étanches \\
+\hline
+OL, OH, PT & Sols organiques, tourbes & Non utilisables \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Dimensionnement des barrages en terre}
+\subsection{Géométrie générale}
+\subsubsection{Hauteur}
+La hauteur totale comprend :
+\begin{equation}
+H_{totale} = H_{retenue} + R + \Delta h_{tassement} + \Delta h_{séisme}
+\label{eq:hauteur_totale}
+\end{equation}
+
+\subsubsection{Pentes des talus}
+Les pentes sont déterminées par analyse de stabilité. Valeurs courantes :
+
+\begin{table}[H]
+\centering
+\caption{Pentes typiques des talus des barrages en terre}
+\label{tab:pentes_talus}
+\begin{tabularx}{\textwidth}{|l|c|c|}
+\hline
+\textbf{Type de matériau} & \textbf{Talus amont} & \textbf{Talus aval} \\
+\hline
+Terre homogène compactée & 1:2.5 à 1:3.5 & 1:2.0 à 1:2.5 \\
+\hline
+Enrochements & 1:1.3 à 1:1.5 & 1:1.3 à 1:1.5 \\
+\hline
+Zone drainante & 1:2.0 à 1:2.5 & 1:1.5 à 1:2.0 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Largeur en crête}
+Formule empirique selon \textbf{USBR} :
+\begin{equation}
+L_{crete} = \sqrt{H} + 3 \quad (\text{pour } H < 30m)
+\label{eq:largeur_crete}
+\end{equation}
+\begin{equation}
+L_{crete} = 0.2H + 6 \quad (\text{pour } H \geq 30m)
+\end{equation}
+
+avec $L_{crete}$ en mètres et $H$ en mètres.
+
+\subsection{Exemple de dimensionnement complet}
+\textbf{Données initiales :}
+\begin{itemize}
+\item Hauteur de retenue : 25 m
+\item Matériaux disponibles : Argile CL, sable SW, gravier GW
+\item Fondation : Roche altérée
+\end{itemize}
+
+\textbf{Calculs :}
+\begin{enumerate}
+\item Hauteur totale :
+\[
+H_{tot} = 25 + 1.5 + 0.5 + 0.3 = 27.3 \, m
+\]
+
+\item Largeur en crête :
+\[
+L_{crete} = \sqrt{27.3} + 3 = 8.2 \, m \quad \text{(on adopte 8.5 m)}
+\]
+
+\item Pentes des talus :
+\begin{itemize}
+\item Talus amont : 1:3.0 (argile compactée)
+\item Talus aval : 1:2.5 (zone drainante)
+\end{itemize}
+
+\item Volume approximatif (section trapézoïdale) :
+\[
+A = \frac{(L_{base} + L_{crete}) \cdot H}{2}
+\]
+\[
+L_{base} = 8.5 + 27.3 \times (3.0 + 2.5) = 158.7 \, m
+\]
+\[
+A = \frac{(158.7 + 8.5) \times 27.3}{2} = 2282.6 \, m^2
+\]
+\[
+V = A \times L_{barrage} \quad (\text{pour } L=200m) = 456,520 \, m^3
+\end{enumerate}
+
+\section{Dispositifs de protection contre les effets des eaux d'infiltration}
+\subsection{Drains et filtres}
+\subsubsection{Conception des filtres}
+Critères de \textbf{Filter} pour les filtres granulaires :
+\begin{enumerate}
+\item Critère de rétention :
+\[
+\frac{D_{15(filtre)}}{D_{85(sol)}} \leq 4 \quad \text{à } 5
+\]
+\item Critère de perméabilité :
+\[
+\frac{D_{15(filtre)}}{D_{15(sol)}} \geq 4 \quad \text{à } 5
+\]
+\item Critère d'uniformité :
+\[
+\frac{D_{60}}{D_{10}} \leq 20 \quad \text{pour les filtres}
+\]
+\end{enumerate}
+
+\subsubsection{Drain horizontal}
+Le débit dans un drain horizontal est donné par la formule de \textbf{Dupuit-Forchheimer} :
+
+\begin{equation}
+q = k \frac{h_1^2 - h_2^2}{2L}
+\label{eq:drain_horizontal}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $q$ : Débit par unité de largeur (m²/s)
+\item $k$ : Perméabilité du matériau drainant (m/s)
+\item $h_1, h_2$ : Charges hydrauliques aux extrémités (m)
+\item $L$ : Longueur du drain (m)
+\end{itemize}
+
+\subsection{Protection des talus}
+\subsubsection{Perré amont}
+Protection contre l'érosion par les vagues (formule de \textbf{Hudson}) :
+
+\begin{equation}
+W = \frac{\gamma_r \cdot H^3}{K_D (S_r - 1)^3 \cot\alpha}
+\label{eq:hudson}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $W$ : Poids des enrochements (t)
+\item $\gamma_r$ : Poids volumique de la roche (t/m³)
+\item $H$ : Hauteur significative de la houle (m)
+\item $K_D$ : Coefficient de stabilité (3-4)
+\item $S_r$ : Densité relative de la roche
+\item $\alpha$ : Angle du talus
+\end{itemize}
+
+\subsubsection{Revêtement aval}
+Protection contre l'érosion pluviale :
+\begin{itemize}
+\item Gazonnement avec système de drainage
+\item Enrochements
+\item Béton cellulaire végétalisé
+\end{itemize}
+
+\subsection{Systèmes de drainage avancés}
+\subsubsection{Drainage par cheminées}
+Pour les barrages hauts, système de drainage vertical :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Barrage
+\draw[thick, fill=brown!30] (0,0) -- (3,5) -- (9,5) -- (12,0) -- cycle;
+\draw[thick, fill=brown!70] (4,0) -- (5,4) -- (7,4) -- (8,0) -- cycle;
+
+% Drains
+\draw[thick, blue] (8,0) -- (8,4) -- (9,5);
+\draw[thick, blue] (3,5) -- (4,4) -- (4,0);
+\draw[thick, blue] (5.5,2.5) -- (6.5,2.5);
+
+% Légende
+\draw (6,5.5) node {Drain cheminée};
+\draw (2,2.5) node {Drain tapis};
+\draw (10,2.5) node {Drain horizontal};
+\end{tikzpicture}
+\caption{Système de drainage combiné dans un barrage en terre}
+\label{fig:drainage_barrage}
+\end{figure}
+
+\section*{Conclusion du chapitre}
+Les barrages en terre représentent une solution économique et adaptable pour la retenue des eaux. Leur conception nécessite une compréhension approfondie du comportement des sols, des mécanismes d'infiltration et des méthodes de drainage. Une attention particulière doit être portée aux dispositifs de protection contre l'érosion et aux systèmes de contrôle des infiltrations.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Pour un barrage en terre de 35 m de hauteur avec des talus 1:3 amont et 1:2.5 aval, calculez la largeur à la base et le volume par mètre linéaire.
+
+\item Dimensionnez un filtre granulaires pour protéger un sol avec D85 = 0.5 mm et D15 = 0.05 mm.
+
+\item Calculez le poids des enrochements nécessaires pour protéger un talus amont de pente 1:3 contre une houle de 2.5 m (γr = 2.6 t/m³, KD = 3.5).
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Sherard, J. L., Woodward, R. J., Gizienski, S. F., \& Clevenger, W. A.} (1963). \textit{Earth and Earth-Rock Dams}. Wiley.
+\item \textbf{US Department of Agriculture}. (2012). \textit{Earth Dams and Reservoirs}.
+\item \textbf{Fell, R., MacGregor, P., Stapledon, D., \& Bell, G.} (2015). \textit{Geotechnical Engineering of Dams}. CRC Press.
+\item \textbf{ICOLD Bulletin 154}. (2013). \textit{Embankment Dams}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 5 ===================
+\chapter{Études des infiltrations à travers le barrage et ses fondations}
+\label{chap:5}
+
+\section{Généralités}
+Les infiltrations constituent l'un des principaux mécanismes de dégradation des barrages en terre. Une compréhension et un contrôle adéquats des écoulements souterrains sont essentiels pour la sécurité à long terme.
+
+\subsection{Loi de Darcy}
+L'écoulement des fluides dans les milieux poreux est régit par la loi de \textbf{Darcy} (1856) :
+
+\begin{equation}
+q = -k \cdot i \cdot A
+\label{eq:darcy}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $q$ : Débit (m³/s)
+\item $k$ : Coefficient de perméabilité (m/s)
+\item $i$ : Gradient hydraulique (sans dimension)
+\item $A$ : Section transversale (m²)
+\end{itemize}
+
+\subsection{Équation générale de l'écoulement}
+Pour un écoulement permanent en milieu poreux isotrope :
+
+\begin{equation}
+\frac{\partial}{\partial x}\left(k_x \frac{\partial h}{\partial x}\right) + 
+\frac{\partial}{\partial y}\left(k_y \frac{\partial h}{\partial y}\right) + 
+\frac{\partial}{\partial z}\left(k_z \frac{\partial h}{\partial z}\right) = 0
+\label{eq:laplace}
+\end{equation}
+
+où $h$ est la charge hydraulique.
+
+\section{Infiltrations à travers un barrage en terre homogène}
+\subsection{Cas d'un barrage sans drain}
+Solution analytique de \textbf{Dupuit} pour un barrage homogène sur fondation imperméable :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Barrage
+\draw[thick, fill=brown!30] (0,0) -- (3,5) -- (9,5) -- (12,0) -- cycle;
+
+% Ligne de saturation
+\draw[thick, blue] (1.8,3.8) parabola bend (7,2.5) (10.5,0.5);
+\draw[dashed, blue] (7,2.5) -- (7,0);
+
+% Points et mesures
+\draw[<->] (0,6) -- (12,6) node[midway, above] {L};
+\draw[<->] (0,0) -- (0,5) node[midway, left] {H₁};
+\draw[<->] (12,0) -- (12,2) node[midway, right] {H₂};
+\draw[<->] (7,0) -- (7,2.5) node[midway, right] {h₀};
+\draw[<->] (3,5.5) -- (9,5.5) node[midway, above] {B};
+
+% Labels
+\draw (1.5,4) node[blue] {Ligne de saturation};
+\draw (6,1) node {Zone saturée};
+\end{tikzpicture}
+\caption{Écoulement à travers un barrage homogène}
+\label{fig:ecoulement_homogene}
+\end{figure}
+
+La ligne de saturation est une parabole dont le sommet est donné par :
+
+\begin{equation}
+h_0 = \sqrt{L^2 + H_1^2} - L
+\label{eq:parabole_dupuit}
+\end{equation}
+
+Le débit d'infiltration par unité de largeur :
+
+\begin{equation}
+q = k \frac{H_1^2 - h_0^2}{2L}
+\label{eq:debit_homogene}
+\end{equation}
+
+\subsection{Cas avec drain horizontal}
+Pour un barrage avec drain horizontal à l'aval, la solution de \textbf{Schaffernak-Van Iterson} :
+
+\begin{equation}
+q = k \frac{a}{L} \left( H_1 - \frac{a}{2} \tan^2 \beta \right) \sin^2 \beta
+\label{eq:schaffernak}
+\end{equation}
+
+où $a$ est la distance entre le pied aval et le point d'émergence de la ligne de saturation.
+
+\section{Infiltrations à travers un barrage en terre hétérogène}
+\subsection{Méthode des fragments}
+La méthode des fragments (\textbf{Pavlovsky, 1931}) permet de calculer les infiltrations dans des barrages de géométrie complexe :
+
+\begin{equation}
+Q = k \cdot H \cdot \sum_{i=1}^{n} \frac{1}{\Phi_i}
+\label{eq:fragments}
+\end{equation}
+
+où $\Phi_i$ sont les facteurs de forme des fragments.
+
+\subsection{Cas d'un noyau central}
+Pour un barrage avec noyau central vertical :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.7]
+% Barrage
+\draw[thick, fill=brown!30] (0,0) -- (3,5) -- (9,5) -- (12,0) -- cycle;
+\draw[thick, fill=brown!70] (4.5,0) -- (5,4) -- (7,4) -- (7.5,0) -- cycle;
+
+% Lignes équipotentielles
+\foreach \x in {1,2,...,11} {
+    \draw[blue, thin] (\x,0) .. controls (\x+0.5,2) and (\x-0.5,4) .. (\x,5);
+}
+
+% Lignes de courant
+\foreach \y in {0.5,1.5,...,4.5} {
+    \draw[red, thin] (0.5,\y) .. controls (3, \y+0.3) and (9, \y-0.3) .. (11.5,\y);
+}
+
+% Légende
+\draw (6,5.5) node {Lignes équipotentielles (bleu) et de courant (rouge)};
+\end{tikzpicture}
+\caption{Réseau d'écoulement dans un barrage à noyau central}
+\label{fig:reseau_ecoulement}
+\end{figure}
+
+La perte de charge à travers le noyau :
+
+\begin{equation}
+\Delta h_{noyau} = \frac{q}{k_{noyau}} \cdot \frac{b}{H}
+\label{eq:perte_noyau}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $b$ : Épaisseur du noyau
+\item $k_{noyau}$ : Perméabilité du noyau
+\end{itemize}
+
+\section{Phénomène de renards}
+\subsection{Mécanisme du renard}
+Le renard est un phénomène d'érosion régressive qui se produit lorsque le gradient hydraulique dépasse la valeur critique provoquant l'entraînement des particules fines.
+
+\subsection{Gradient hydraulique critique}
+Formule de \textbf{Terzaghi} pour le gradient critique :
+
+\begin{equation}
+i_c = \frac{\gamma'}{\gamma_w} = \frac{G_s - 1}{1 + e}
+\label{eq:gradient_critique}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $\gamma'$ : Poids volumique déjaugé du sol
+\item $\gamma_w$ : Poids volumique de l'eau
+\item $G_s$ : Densité des grains solides
+\item $e$ : Indice des vides
+\end{itemize}
+
+\subsection{Protection contre les renards}
+\subsubsection{Filtres inversés}
+Conception selon les critères de \textbf{Sherard} :
+
+\begin{table}[H]
+\centering
+\caption{Critères de conception des filtres contre les renards}
+\label{tab:filtres_renards}
+\begin{tabularx}{\textwidth}{|l|c|c|}
+\hline
+\textbf{Critère} & \textbf{Expression} & \textbf{Valeur limite} \\
+\hline
+Perméabilité & $k_{filtre}/k_{sol}$ & $\geq 25$ \\
+\hline
+Rétention & $D_{15(filtre)}/D_{85(sol)}$ & $\leq 5$ \\
+\hline
+Épaisseur minimale & - & 0.5 m \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Systèmes de drainage}
+Les systèmes de drainage doivent réduire le gradient hydraulique en dessous de la valeur critique :
+
+\begin{equation}
+i_{max} \leq \frac{i_c}{FS}
+\label{eq:gradient_securite}
+\end{equation}
+
+avec $FS \geq 2$ pour les conditions permanentes.
+
+\subsection{Méthode d'analyse numérique}
+\subsubsection{Logiciels utilisés}
+\begin{itemize}
+\item \textbf{SEEP/W} : Module de GeoStudio pour les écoulements
+\item \textbf{PLAXIS} : Modélisation couplée écoulement-déformation
+\item \textbf{MODFLOW} : Standard USGS pour les écoulements souterrains
+\end{itemize}
+
+\subsubsection{Exemple de modélisation SEEP/W}
+Les étapes de modélisation :
+\begin{enumerate}
+\item Définition de la géométrie et des matériaux
+\item Application des conditions aux limites
+\item Maillage adaptatif
+\item Résolution par éléments finis
+\item Post-traitement (gradients, vitesses, pressions)
+\end{enumerate}
+
+\subsection{Exemple de calcul d'infiltration}
+\textbf{Problème :} Barrage homogène de 30 m de hauteur, largeur en crête 10 m, pentes 1:3 amont et 1:2.5 aval, perméabilité $k = 10^{-6}$ m/s.
+
+\textbf{Solution :}
+\begin{enumerate}
+\item Dimensions :
+\[
+L_{base} = 10 + 30 \times (3 + 2.5) = 175 \, m
+\]
+\[
+L = 175 - 30 \times 2.5 = 100 \, m \quad \text{(distance entre pieds de talus)}
+\]
+
+\item Hauteur d'eau amont : $H_1 = 28 \, m$ (avec revanche)
+\item Hauteur aval : $H_2 = 0 \, m$ (drain efficace)
+
+\item Calcul par formule de Dupuit :
+\[
+h_0 = \sqrt{100^2 + 28^2} - 100 = 3.86 \, m
+\]
+\[
+q = 10^{-6} \times \frac{28^2 - 3.86^2}{2 \times 100} = 3.84 \times 10^{-6} \, m^3/s/m
+\]
+
+\item Débit total pour 200 m de longueur :
+\[
+Q = 3.84 \times 10^{-6} \times 200 = 7.68 \times 10^{-4} \, m^3/s = 0.77 \, L/s
+\]
+
+\item Vérification du gradient maximal :
+\[
+i_{max} = \frac{H_1}{L} = \frac{28}{100} = 0.28
+\]
+Pour un sol avec $i_c = 1.0$, $FS = 1.0/0.28 = 3.6 > 2.0$ OK
+\end{enumerate}
+
+\section*{Conclusion du chapitre}
+L'étude des infiltrations est fondamentale pour la sécurité des barrages en terre. Une modélisation appropriée des écoulements permet de dimensionner les systèmes de drainage, de prévenir les phénomènes d'érosion interne et d'assurer la stabilité à long terme de l'ouvrage.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Pour un barrage homogène avec $H_1 = 25$ m, $L = 80$ m, $k = 5\times10^{-7}$ m/s, calculez le débit d'infiltration et la position de la ligne de saturation.
+
+\item Vérifiez la stabilité d'un sol avec $G_s = 2.65$, $e = 0.6$ sous un gradient de 0.35.
+
+\item Dimensionnez un filtre pour protéger un sol dont $D_{85} = 0.3$ mm et $D_{15} = 0.02$ mm.
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Cedergren, H. R.} (1989). \textit{Seepage, Drainage, and Flow Nets}. Wiley.
+\item \textbf{Harr, M. E.} (1962). \textit{Groundwater and Seepage}. McGraw-Hill.
+\item \textbf{Freeze, R. A., \& Cherry, J. A.} (1979). \textit{Groundwater}. Prentice-Hall.
+\item \textbf{ICOLD Bulletin 164}. (2015). \textit{Internal Erosion of Existing Dams}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 6 ===================
+\chapter{Stabilité au glissement des barrages en terre}
+\label{chap:6}
+
+\section{Généralités}
+La stabilité des talus est un aspect critique dans la conception des barrages en terre. Les ruptures peuvent survenir progressivement ou brutalement, avec des conséquences catastrophiques.
+
+\subsection{Définitions importantes}
+\begin{itemize}
+\item \textbf{Surface de rupture} : Surface le long de laquelle le glissement se produit
+\item \textbf{Coefficient de sécurité} : Rapport entre les forces résistantes et motrices
+\item \textbf{Pression interstitielle} : Pression de l'eau dans les pores du sol
+\item \textbf{Résistance au cisaillement} : Capacité du sol à résister au glissement
+\end{itemize}
+
+\section{Types de mouvements des terres}
+\subsection{Classification selon Varnes (1978)}
+
+\begin{table}[H]
+\centering
+\caption{Classification des mouvements de terrain}
+\label{tab:mouvements_terrain}
+\begin{tabularx}{\textwidth}{|l|X|c|}
+\hline
+\textbf{Type} & \textbf{Description} & \textbf{Vitesse typique} \\
+\hline
+Glissement rotationnel & Surface de rupture circulaire & lente à rapide \\
+\hline
+Glissement translationnel & Surface plane parallèle à la pente & lente à rapide \\
+\hline
+Écoulement & Comportement fluide & rapide à très rapide \\
+\hline
+Affaissement & Mouvement vertical & lente \\
+\hline
+Répandage & Extension latérale & lente \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Notions de coefficient de stabilité}
+\subsection{Définition}
+Le coefficient de sécurité ($FS$) est défini comme :
+
+\begin{equation}
+FS = \frac{\tau_{disponible}}{\tau_{mobilisé}}
+\label{eq:fs_general}
+\end{equation}
+
+où $\tau_{disponible}$ est la résistance au cisaillement disponible et $\tau_{mobilisé}$ est la contrainte de cisaillement mobilisée.
+
+\subsection{Valeurs minimales recommandées}
+
+\begin{table}[H]
+\centering
+\caption{Coefficients de sécurité minimaux recommandés (USBR)}
+\label{tab:fs_minimum}
+\begin{tabularx}{\textwidth}{|l|c|c|}
+\hline
+\textbf{Condition de chargement} & \textbf{Situation normale} & \textbf{Situation extrême} \\
+\hline
+Fin de construction & 1.3 & 1.1 \\
+\hline
+Rapid drawdown & 1.2 & 1.0 \\
+\hline
+Séisme (MCE) & - & 1.0 \\
+\hline
+Conditions permanentes & 1.5 & 1.2 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Calcul de la stabilité des talus}
+\subsection{Méthode des tranches}
+La méthode des tranches (\textbf{Fellenius, 1927}) divise la masse potentiellement instable en tranches verticales.
+
+\subsubsection{Méthode de Fellenius (Ordinaire)}
+Pour chaque tranche $i$ :
+
+\begin{equation}
+FS = \frac{\sum [c'l_i + (W_i \cos\alpha_i - u_i l_i) \tan\phi']}{\sum W_i \sin\alpha_i}
+\label{eq:fellenius}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $c'$ : Cohésion effective
+\item $\phi'$ : Angle de frottement effectif
+\item $W_i$ : Poids de la tranche
+\item $\alpha_i$ : Angle de la base de la tranche avec l'horizontale
+\item $u_i$ : Pression interstitielle à la base
+\item $l_i$ : Longueur de la base de la tranche
+\end{itemize}
+
+\subsubsection{Méthode de Bishop simplifiée}
+Amélioration de la méthode de Fellenius :
+
+\begin{equation}
+FS = \frac{\sum \frac{1}{m_{\alpha_i}} [c'b_i + (W_i - u_i b_i) \tan\phi']}{\sum W_i \sin\alpha_i}
+\label{eq:bishop}
+\end{equation}
+
+avec :
+\begin{equation}
+m_{\alpha_i} = \cos\alpha_i + \frac{\sin\alpha_i \tan\phi'}{FS}
+\end{equation}
+
+\subsection{Méthode de Janbu}
+Méthode plus générale tenant compte des forces inter-tranches :
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Tranchée
+\draw[thick] (0,0) -- (8,0) -- (8,3) -- (0,3) -- cycle;
+
+% Forces
+\draw[->, thick, red] (4,1.5) -- (4,0.5) node[right] {W};
+\draw[->, thick, blue] (2,0.5) -- (2,1.5) node[left] {N};
+\draw[->, thick, green] (4,1.5) -- (5,1.5) node[right] {S};
+\draw[->, thick, orange] (0,1.5) -- (1,1.5) node[above] {E₁};
+\draw[->, thick, orange] (8,1.5) -- (7,1.5) node[above] {E₂};
+\draw[->, thick, purple] (0,2.5) -- (1,2) node[above] {X₁};
+\draw[->, thick, purple] (8,2.5) -- (7,2) node[above] {X₂};
+
+% Angle
+\draw (4,0.5) arc (0:30:1) node[midway, right] {α};
+
+% Légende
+\draw (4,3.5) node {W : Poids};
+\draw (4,3) node {N : Réaction normale};
+\draw (4,2.5) node {S : Force de cisaillement};
+\draw (4,2) node {E : Forces horizontales inter-tranches};
+\draw (4,1.5) node {X : Forces verticales inter-tranches};
+\end{tikzpicture}
+\caption{Forces agissant sur une tranche (méthode de Janbu)}
+\label{fig:tranche_forces}
+\end{figure}
+
+\subsection{Analyse des pressions interstitielles}
+\subsubsection{Pression interstitielle en régime permanent}
+Pour un point à la profondeur $z$ sous la surface libre :
+
+\begin{equation}
+u = \gamma_w (h - z)
+\label{eq:pression_interstitielle}
+\end{equation}
+
+où $h$ est la charge hydraulique au point considéré.
+
+\subsubsection{Dissipation pendant la mise en eau}
+La consolidation de \textbf{Terzaghi} :
+
+\begin{equation}
+\frac{\partial u}{\partial t} = c_v \frac{\partial^2 u}{\partial z^2}
+\label{eq:consolidation}
+\end{equation}
+
+avec $c_v$ le coefficient de consolidation.
+
+\subsection{Influence du séisme}
+Méthode pseudo-statique : introduction d'un coefficient sismique $k_h$ :
+
+\begin{equation}
+FS_{seisme} = \frac{\sum [c'l_i + (W_i \cos\alpha_i - k_h W_i \sin\alpha_i - u_i l_i) \tan\phi']}{\sum (W_i \sin\alpha_i + k_h W_i \cos\alpha_i)}
+\label{eq:fs_seisme}
+\end{equation}
+
+\subsection{Exemple de calcul de stabilité}
+\textbf{Problème :} Talus de 15 m de hauteur, pente 1:2.5, sol avec $c' = 10$ kPa, $\phi' = 25°$, $\gamma = 19$ kN/m³. Niveau phréatique à 5 m sous la crête.
+
+\textbf{Solution (méthode de Fellenius simplifiée) :}
+\begin{enumerate}
+\item Choix de surface circulaire de rayon $R = 30$ m, centre ($x=0$, $y=40$ m)
+\item Division en 10 tranches de largeur $b = 3$ m
+\item Calcul pour tranche centrale (tranche 5) :
+\begin{itemize}
+\item Hauteur moyenne : $h = 8$ m
+\item Poids : $W = \gamma \cdot b \cdot h = 19 \times 3 \times 8 = 456$ kN/m
+\item Angle base : $\alpha = 25°$
+\item Longueur base : $l = b/\cos\alpha = 3/\cos25° = 3.31$ m
+\item Pression interstitielle (niveau à mi-hauteur) :
+\[
+u = \gamma_w \times (3 - 0) = 10 \times 3 = 30 \, kPa
+\]
+\end{itemize}
+
+\item Calcul des sommes :
+\[
+\sum R = \sum [c'l + (W\cos\alpha - ul)\tan\phi'] = 1,850 \, kN/m
+\]
+\[
+\sum M = \sum W\sin\alpha = 1,200 \, kN/m
+\]
+
+\item Coefficient de sécurité :
+\[
+FS = \frac{1,850}{1,200} = 1.54 > 1.5 \quad \text{OK}
+\]
+
+\item Vérification séisme ($k_h = 0.1$) :
+\[
+\sum R_{seisme} = 1,750 \, kN/m
+\]
+\[
+\sum M_{seisme} = 1,350 \, kN/m
+\]
+\[
+FS_{seisme} = \frac{1,750}{1,350} = 1.30 > 1.0 \quad \text{OK}
+\end{enumerate}
+
+\subsection{Méthodes numériques modernes}
+\subsubsection{Méthode des éléments finis}
+Avantages :
+\begin{itemize}
+\item Prise en compte des déformations
+\item Comportement non-linéaire des matériaux
+\item Couplage hydromécanique
+\item Analyse dynamique
+\end{itemize}
+
+\subsubsection{Logiciels spécialisés}
+\begin{itemize}
+\item \textbf{SLOPE/W} : Module de GeoStudio pour la stabilité des pentes
+\item \textbf{PLAXIS LE} : Calcul des coefficients de sécurité
+\item \textbf{FLAC} : Modélisation explicite des ruptures
+\end{itemize}
+
+\subsection{Mesures d'amélioration de la stabilité}
+\subsubsection{Drainage}
+Réduction des pressions interstitielles :
+\begin{itemize}
+\item Drains horizontaux
+\item Drains verticaux (wick drains)
+\item Puits de décharge
+\end{itemize}
+
+\subsubsection{Confirmation}
+Augmentation de la résistance :
+\begin{itemize}
+\item Buttress (contrefort) aval
+\item Clouage du sol (soil nailing)
+\item Ancrages
+\end{itemize}
+
+\subsubsection{Modification géométrique}
+\begin{itemize}
+\item Reprofilage (réduction de la pente)
+\item Bermes de stabilité
+\item Démolition partielle
+\end{itemize}
+
+\section*{Conclusion du chapitre}
+La stabilité des talus des barrages en terre est une problématique complexe nécessitant une analyse rigoureuse des conditions de chargement, des caractéristiques des matériaux et des régimes hydrauliques. Les méthodes modernes de calcul permettent une évaluation fiable des coefficients de sécurité et la conception de mesures correctives appropriées.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Pour un talus de 20 m de hauteur avec pente 1:3, sol $c'=15$ kPa, $\phi'=28°$, $\gamma=20$ kN/m³, niveau phréatique à surface, calculez FS par méthode de Fellenius.
+
+\item Évaluez l'effet d'un drain horizontal réduisant la pression interstitielle de 50\% sur le FS de l'exercice 1.
+
+\item Dimensionnez une berme de stabilité pour augmenter le FS de 1.2 à 1.5.
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Duncan, J. M., \& Wright, S. G.} (2005). \textit{Soil Strength and Slope Stability}. Wiley.
+\item \textbf{Abramson, L. W., Lee, T. S., Sharma, S., \& Boyce, G. M.} (2002). \textit{Slope Stability and Stabilization Methods}. Wiley.
+\item \textbf{Fredlund, D. G., \& Rahardjo, H.} (1993). \textit{Soil Mechanics for Unsaturated Soils}. Wiley.
+\item \textbf{ICOLD Bulletin 82}. (1992). \textit{Selecting seismic parameters for large dams}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CHAPITRE 7 ===================
+\chapter{Les barrages en enrochements}
+\label{chap:7}
+
+\section{Introduction}
+Les barrages en enrochements sont des ouvrages constitués principalement de matériaux rocheux fragmentés, avec un dispositif d'étanchéité placé en amont ou au centre.
+
+\subsection{Définition et caractéristiques}
+Un barrage en enrochements est défini par :
+\begin{itemize}
+\item Corps principal en enrochements (rockfill)
+\item Dispositif d'étanchéité séparé
+\item Grande perméabilité du corps
+\item Excellente résistance aux séismes
+\end{itemize}
+
+\section{Classification des barrages en enrochements}
+\subsection{Selon la position de l'étanchéité}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.7]
+% CFRD
+\draw[thick, fill=gray!30] (0,0) -- (3,5) -- (9,5) -- (12,0) -- cycle;
+\draw[thick, fill=blue!20] (0,0) -- (0.5,0.5) -- (1,1) -- (1.5,1.5) -- (2,2) -- (2.5,2.5) -- (3,3) -- (3.5,3.5) -- (4,4) -- (4.5,4.5) -- (5,5);
+\draw (6,2.5) node {CFRD};
+
+% ECRD
+\draw[thick, fill=gray!30] (14,0) -- (17,5) -- (23,5) -- (26,0) -- cycle;
+\draw[thick, fill=brown!50] (17.5,0) -- (18,4) -- (20,4) -- (20.5,0) -- cycle;
+\draw (20,2.5) node {ECRD};
+
+% RCCD
+\draw[thick, fill=gray!30] (28,0) -- (31,5) -- (37,5) -- (40,0) -- cycle;
+\draw[thick, fill=red!30] (30,0) -- (30.5,4) -- (32.5,4) -- (33,0) -- cycle;
+\draw (34,2.5) node {RCCD};
+\end{tikzpicture}
+\caption{Types de barrages en enrochements : (a) CFRD, (b) ECRD, (c) RCCD}
+\label{fig:types_enrochements}
+\end{figure}
+
+\subsection{Selon le type d'enrochements}
+\begin{itemize}
+\item \textbf{Enrochements concassés} : Anguleux, bonne imbrication
+\item \textbf{Enrochements alluvionnaires} : Roulés, moins stables
+\item \textbf{Mélanges} : Combinaison des deux
+\end{itemize}
+
+\section{Types d'enrochements utilisés}
+\subsection{Caractéristiques géotechniques}
+
+\begin{table}[H]
+\centering
+\caption{Propriétés des enrochements selon l'origine}
+\label{tab:proprietes_enrochements}
+\begin{tabularx}{\textwidth}{|l|c|c|c|c|}
+\hline
+\textbf{Type} & \textbf{Densité (t/m³)} & \textbf{Angle de frottement (°)} & \textbf{Module (MPa)} & \textbf{Durabilité} \\
+\hline
+Calcaire concassé & 2.1-2.3 & 40-45 & 100-200 & Moyenne \\
+\hline
+Granit concassé & 2.3-2.5 & 45-50 & 200-400 & Excellente \\
+\hline
+Basalte concassé & 2.4-2.6 & 42-47 & 150-300 & Bonne \\
+\hline
+Grès concassé & 2.2-2.4 & 38-43 & 80-150 & Variable \\
+\hline
+Alluvions roulées & 2.0-2.2 & 35-40 & 50-100 & Faible \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Essais de caractérisation}
+\subsubsection{Essai de Los Angeles}
+Mesure de la résistance à l'abrasion (norme ASTM C131) :
+
+\begin{equation}
+LA = \frac{P_{initial} - P_{final}}{P_{initial}} \times 100\%
+\label{eq:los_angeles}
+\end{equation}
+
+Valeurs acceptables : $LA < 40\%$ pour les barrages.
+
+\subsubsection{Essai Micro-Deval}
+Résistance à l'usure par frottement (norme NF P18-572) :
+
+\begin{equation}
+MDE = \frac{P_{passant 1.6mm}}{P_{initial}} \times 100\%
+\label{eq:microdeval}
+\end{equation}
+
+Valeurs acceptables : $MDE < 20\%$.
+
+\section{Formes et structures des barrages en enrochements}
+\subsection{Géométrie typique}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Barrage
+\draw[thick, fill=gray!30] (0,0) -- (2,6) -- (10,6) -- (12,0) -- cycle;
+
+% Zones
+\draw[thick, fill=gray!50] (0,0) -- (1,3) -- (1.5,3.5) -- (2,4) -- (2.5,4.5) -- (3,5) -- (2,6);
+\draw[thick, fill=gray!10] (3,5) -- (4,5.5) -- (8,5.5) -- (9,5) -- (3,5);
+\draw[thick, fill=gray!70] (9,5) -- (10,6) -- (12,0) -- (9,5);
+
+% Étanchéité
+\draw[thick, fill=blue!30] (0,0) -- (0.5,1) -- (1,2) -- (1.5,3) -- (2,4) -- (2.5,5) -- (3,6);
+
+% Légendes
+\draw (1,1) node[rotate=45] {Zone 2B};
+\draw (5.5,5.7) node {Zone 3A};
+\draw (10.5,3) node {Zone 3B};
+\draw (1.5,4.5) node[rotate=45] {Étanchéité};
+\draw (6,3) node {Zone 2A};
+\end{tikzpicture}
+\caption{Zonage typique d'un barrage en enrochements (CFRD)}
+\label{fig:zonage_enrochements}
+\end{figure}
+
+\subsection{Dimensionnement}
+\subsubsection{Pentes des talus}
+Généralement plus raides que les barrages en terre :
+\begin{itemize}
+\item Talus amont : 1:1.3 à 1:1.4
+\item Talus aval : 1:1.3 à 1:1.5
+\end{itemize}
+
+\subsubsection{Largeur en crête}
+Formule empirique :
+
+\begin{equation}
+L_{crete} = 0.2H + 5 \quad (m)
+\label{eq:crete_enrochements}
+\end{equation}
+
+avec $H$ en mètres.
+
+\section{Dispositifs d'étanchéité}
+\subsection{Types de dispositifs}
+
+\begin{table}[H]
+\centering
+\caption{Comparaison des systèmes d'étanchéité}
+\label{tab:etancheite_enrochements}
+\begin{tabularx}{\textwidth}{|l|X|c|c|}
+\hline
+\textbf{Système} & \textbf{Description} & \textbf{Épaisseur (mm)} & \textbf{Débit de fuite (L/s/km)} \\
+\hline
+Béton bitumineux & Mélange bitume-granulats & 80-120 & 1-5 \\
+\hline
+Géomembrane PVC & Membrane synthétique & 2.5-3.5 & 0.1-0.5 \\
+\hline
+Béton armé & Dalles coulées en place & 300-600 & 0.5-2 \\
+\hline
+Acier inox & Tôles ancrées & 6-10 & 0.01-0.1 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Conception des joints}
+Les joints doivent accommoder :
+\begin{itemize}
+\item Tassements différentiels
+\item Dilatations thermiques
+\item Déformations sismiques
+\end{itemize}
+
+Largeur des joints :
+
+\begin{equation}
+w = \Delta_{thermique} + \Delta_{tassement} + \Delta_{seisme} + marge
+\label{eq:largeur_joints}
+\end{equation}
+
+\section{Étanchéité des fondations}
+\subsection{Traitements courants}
+\begin{itemize}
+\item \textbf{Injection de coulis} : Rideau d'injection
+\item \textbf{Diaphragme moulé} : Paroi étanche
+\item \textbf{Drainage profond} : Réduction des sous-pressions
+\item \textbf{Chemisage} : Protection contre l'érosion
+\end{itemize}
+
+\subsection{Conception du rideau d'injection}
+Profondeur selon formule de \textbf{Lugeon} :
+
+\begin{equation}
+D = \frac{H}{\tan\beta}
+\label{eq:profondeur_injection}
+\end{equation}
+
+où $\beta$ est l'angle du rideau avec la verticale (généralement 15-30°).
+
+\section{Stabilité des barrages en enrochements}
+\subsection{Méthodes d'analyse}
+\subsubsection{Méthode des contraintes effectives}
+Applique le critère de Mohr-Coulomb aux enrochements :
+
+\begin{equation}
+\tau_f = \sigma'_n \tan\phi'
+\label{eq:mohr_enrochements}
+\end{equation}
+
+avec $\phi' = 40-50°$ pour les enrochements concassés.
+
+\subsubsection{Méthode des déformations}
+Évalue les tassements prévisibles :
+
+\begin{equation}
+\delta = \frac{qB}{M} (1 - \nu^2) I
+\label{eq:tassement_enrochements}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $q$ : Contrainte appliquée
+\item $B$ : Largeur de la fondation
+\item $M$ : Module de déformation
+\item $\nu$ : Coefficient de Poisson
+\item $I$ : Facteur d'influence
+\end{itemize}
+
+\subsection{Analyse sismique}
+Méthode de \textbf{Newmark} pour le déplacement permanent :
+
+\begin{equation}
+d_N = \frac{V_{max}^2}{2a_{max}g} \cdot \frac{a_{max}}{A_y}
+\label{eq:newmark}
+\end{equation}
+
+où :
+\begin{itemize}
+\item $V_{max}$ : Vitesse maximale du sol
+\item $a_{max}$ : Accélération maximale
+\item $A_y$ : Accélération de yield
+\end{itemize}
+
+\subsection{Exemple de dimensionnement}
+\textbf{Problème :} CFRD de 80 m de hauteur, fondation rocheuse saine.
+
+\textbf{Solution :}
+\begin{enumerate}
+\item Dimensions principales :
+\[
+L_{crete} = 0.2 \times 80 + 5 = 21 \, m
+\]
+\[
+Pente \, amont : 1:1.4 \quad Pente \, aval : 1:1.5
+\]
+\[
+L_{base} = 21 + 80 \times (1.4 + 1.5) = 253 \, m
+\]
+
+\item Volume approximatif (section trapézoïdale) :
+\[
+A = \frac{(253 + 21) \times 80}{2} = 10,960 \, m^2
+\]
+\[
+V = 10,960 \times L \quad (pour \, L=300m) = 3,288,000 \, m^3
+\]
+
+\item Étanchéité (béton bitumineux) :
+\[
+Épaisseur = 100 \, mm
+\]
+\[
+Surface = 300 \times \sqrt{80^2 + (80\times1.4)^2} = 300 \times 132 = 39,600 \, m^2
+\]
+\[
+Volume \, bitumineux = 39,600 \times 0.1 = 3,960 \, m^3
+\]
+
+\item Stabilité sous séisme (MCE, PGA=0.3g) :
+\[
+FS_{statique} = \frac{\tan\phi'}{\tan\alpha} = \frac{\tan45°}{\tan35.5°} = 1.41
+\]
+\[
+FS_{dynamique} = \frac{\tan\phi'}{\tan\alpha + k_h} = \frac{\tan45°}{\tan35.5° + 0.3} = 1.06 > 1.0 \, OK
+\]
+\end{enumerate}
+
+\subsection{Instrumentation et surveillance}
+\subsubsection{Instruments essentiels}
+\begin{itemize}
+\item \textbf{Piezomètres} : Pressions interstitielles
+\item \textbf{Inclinomètres} : Déformations internes
+\item \textbf{Extensomètres} : Déformations de l'étanchéité
+\item \textbf{Accéléromètres} : Réponse sismique
+\item \textbf{Station totale} : Déplacements de surface
+\end{itemize}
+
+\subsubsection{Fréquence des mesures}
+\begin{table}[H]
+\centering
+\caption{Fréquence recommandée des mesures de surveillance}
+\label{tab:frequence_surveillance}
+\begin{tabularx}{\textwidth}{|l|c|c|c|}
+\hline
+\textbf{Période} & \textbf{Piezomètres} & \textbf{Déplacements} & \textbf{Visites} \\
+\hline
+Construction & Quotidienne & Hebdomadaire & Continue \\
+\hline
+Mise en eau & Journalière & Hebdomadaire & Journalière \\
+\hline
+1ère année & Mensuelle & Mensuelle & Mensuelle \\
+\hline
+Opération & Trimestrielle & Semestrielle & Trimestrielle \\
+\hline
+Vieillissement & Semestrielle & Annuelle & Semestrielle \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section*{Conclusion du chapitre}
+Les barrages en enrochements offrent une solution performante et économique pour les sites disposant de matériaux rocheux de qualité. Leur excellente résistance aux séismes et leur capacité à supporter des tassements importants en font des ouvrages adaptés aux régions à forte sismicité. Une conception rigoureuse des systèmes d'étanchéité et de drainage est essentielle pour leur durabilité.
+
+\section*{Exercices d'application}
+\begin{enumerate}
+\item Dimensionnez un CFRD de 60 m de hauteur avec pente amont 1:1.4 et aval 1:1.5.
+
+\item Calculez le volume d'enrochements nécessaire pour un barrage de 150 m de longueur en crête.
+
+\item Évaluez la stabilité dynamique pour un séisme avec PGA=0.25g (φ'=42°, α=35°).
+\end{enumerate}
+
+\section*{Bibliographie du chapitre}
+\begin{itemize}
+\item \textbf{Cooke, J. B., \& Sherard, J. L.} (1987). \textit{Concrete Face Rockfill Dams}. ASCE.
+\item \textbf{Penman, A. D. M.} (2014). \textit{Embankment Dams}. CRC Press.
+\item \textbf{ICOLD Bulletin 141}. (2010). \textit{Concrete Face Rockfill Dams}.
+\item \textbf{US Society on Dams}. (2011). \textit{Design and Construction of Earth and Rockfill Dams}.
+\end{itemize}
+
+\cleardoublepage
+
+% =================== CONCLUSION GÉNÉRALE ===================
+\chapter*{Conclusion Générale}
+\addcontentsline{toc}{chapter}{Conclusion Générale}
+
+Ce cours complet sur les barrages a couvert l'ensemble des aspects fondamentaux nécessaires à la conception, la construction et la surveillance des ouvrages hydrauliques. Les sept chapitres ont traité successivement :
+
+\begin{enumerate}
+\item \textbf{Les généralités} : Contexte historique, classification et éléments constructifs
+\item \textbf{Les études préliminaires} : Topographie, géologie, hydrologie
+\item \textbf{Les barrages à masque amont} : Matériaux, conception, mise en œuvre
+\item \textbf{Les barrages en terre} : Dimensionnement, drainage, stabilité
+\item \textbf{Les infiltrations} : Mécanismes, modélisation, prévention des renards
+\item \textbf{La stabilité au glissement} : Méthodes de calcul, amélioration
+\item \textbf{Les barrages en enrochements} : Typologie, étanchéité, comportement
+\end{enumerate}
+
+\section*{Perspectives d'avenir}
+Le domaine des barrages continue d'évoluer avec :
+\begin{itemize}
+\item \textbf{Les nouveaux matériaux} : Géosynthétiques avancés, bétons performants
+\item \textbf{La modélisation numérique} : Simulation 3D, intelligence artificielle
+\item \textbf{La surveillance intelligente} : Capteurs connectés, drones d'inspection
+\item \textbf{Le développement durable} : Intégration écologique, énergies renouvelables
+\end{itemize}
+
+\section*{Importance pour l'Algérie}
+Dans le contexte algérien marqué par la rareté de l'eau, la maîtrise des techniques de barrages revêt une importance stratégique pour :
+\begin{itemize}
+\item La sécurité hydrique nationale
+\item Le développement agricole
+\item La production d'énergie propre
+\item La protection contre les crues
+\end{itemize}
+
+\vspace{1cm}
+\begin{center}
+\textbf{Le génie des barrages reste donc un domaine d'excellence et d'innovation, au service du développement durable de notre pays.}
+\end{center}
+
+\cleardoublepage
+
+% =================== ANNEXES ===================
+\appendix
+\chapter{Annexes techniques}
+
+\section{Tableaux de conversion}
+\begin{table}[H]
+\centering
+\caption{Facteurs de conversion des unités}
+\label{tab:conversion}
+\begin{tabularx}{\textwidth}{|l|l|l|}
+\hline
+\textbf{Grandeur} & \textbf{Unité SI} & \textbf{Autres unités} \\
+\hline
+Pression & 1 kPa & 0.145 psi \\
+\hline
+Perméabilité & 1 m/s & $1.02 \times 10^{-4}$ cm/s \\
+\hline
+Débit & 1 m³/s & 35.31 cfs \\
+\hline
+Énergie & 1 kWh & 3.6 MJ \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Constantes physiques}
+\begin{itemize}
+\item Accélération de la pesanteur : $g = 9.80665 \, m/s^2$
+\item Poids volumique de l'eau : $\gamma_w = 9.81 \, kN/m^3$
+\item Poids volumique de l'eau salée : $\gamma_{ws} = 10.05 \, kN/m^3$
+\item Masse volumique de l'air : $\rho_{air} = 1.225 \, kg/m^3$
+\end{itemize}
+
+\section{Logiciels spécialisés}
+\begin{table}[H]
+\centering
+\caption{Logiciels utilisés dans la conception des barrages}
+\label{tab:logiciels}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Logiciel} & \textbf{Application principale} \\
+\hline
+GeoStudio (SEEP/W, SLOPE/W) & Écoulements et stabilité \\
+\hline
+PLAXIS & Modélisation géotechnique avancée \\
+\hline
+HEC-RAS & Hydrologie et hydraulique \\
+\hline
+AutoCAD Civil 3D & Conception assistée \\
+\hline
+FLAC & Analyse explicite des déformations \\
+\hline
+\end{tabularx}
+\end{table}
+
+\cleardoublepage
+
+% =================== BIBLIOGRAPHIE GÉNÉRALE ===================
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliographie Générale}
+
+\bibitem{icold2023} International Commission on Large Dams (ICOLD). (2023). \textit{World Register of Dams}. Paris: ICOLD.
+
+\bibitem{novak2019} Novak, P., Moffat, A. I. B., Nalluri, C., \& Narayanan, R. (2019). \textit{Hydraulic Structures} (6th ed.). Boca Raton: CRC Press.
+
+\bibitem{usbr2020} US Bureau of Reclamation. (2020). \textit{Design of Small Dams} (3rd ed.). Denver: USBR.
+
+\bibitem{londe2018} Londe, P. (2018). \textit{La sécurité des barrages}. Paris: Presses des Ponts.
+
+\bibitem{chow2020} Chow, V. T., Maidment, D. R., \& Mays, L. W. (2020). \textit{Applied Hydrology} (2nd ed.). New York: McGraw-Hill.
+
+\bibitem{fell2015} Fell, R., MacGregor, P., Stapledon, D., \& Bell, G. (2015). \textit{Geotechnical Engineering of Dams} (2nd ed.). Leiden: CRC Press.
+
+\bibitem{sherard1963} Sherard, J. L., Woodward, R. J., Gizienski, S. F., \& Clevenger, W. A. (1963). \textit{Earth and Earth-Rock Dams}. New York: Wiley.
+
+\bibitem{giroud2016} Giroud, J. P. (2016). \textit{Geomembranes and Geosynthetics for Fluid Containment}. Amsterdam: Elsevier.
+
+\bibitem{cedergren1989} Cedergren, H. R. (1989). \textit{Seepage, Drainage, and Flow Nets} (3rd ed.). New York: Wiley.
+
+\bibitem{duncan2005} Duncan, J. M., \& Wright, S. G. (2005). \textit{Soil Strength and Slope Stability}. Hoboken: Wiley.
+
+\bibitem{cooke1987} Cooke, J. B., \& Sherard, J. L. (Eds.). (1987). \textit{Concrete Face Rockfill Dams}. New York: ASCE.
+
+\bibitem{algerie2019} Ministère des Ressources en Eau (Algérie). (2019). \textit{Guide technique des barrages}. Alger: MRE.
+
+\bibitem{penman2014} Penman, A. D. M. (2014). \textit{Embankment Dams}. Leiden: CRC Press.
+
+\bibitem{koerner2020} Koerner, R. M. (2020). \textit{Designing with Geosynthetics} (7th ed.). London: Pearson.
+
+\bibitem{freeze1979} Freeze, R. A., \& Cherry, J. A. (1979). \textit{Groundwater}. Englewood Cliffs: Prentice-Hall.
+
+\bibitem{abramson2002} Abramson, L. W., Lee, T. S., Sharma, S., \& Boyce, G. M. (2002). \textit{Slope Stability and Stabilization Methods} (2nd ed.). New York: Wiley.
+
+\bibitem{icold135} ICOLD Bulletin 135. (2010). \textit{Geomembrane Sealing Systems for Dams}. Paris: ICOLD.
+
+\bibitem{icold141} ICOLD Bulletin 141. (2010). \textit{Concrete Face Rockfill Dams}. Paris: ICOLD.
+
+\bibitem{icold154} ICOLD Bulletin 154. (2013). \textit{Embankment Dams}. Paris: ICOLD.
+
+\bibitem{icold164} ICOLD Bulletin 164. (2015). \textit{Internal Erosion of Existing Dams}. Paris: ICOLD.
+
+\end{thebibliography}
+
+\cleardoublepage
+
+% =================== INDEX ===================
+\printindex
+
+\end{document}
